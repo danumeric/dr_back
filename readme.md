@@ -12,9 +12,10 @@ npm install
 ```
 npx prisma migrate deploy
 ```
-Далее нужно восстановить бэкап БД, я использую gui pgadmin.
+Далее нужно восстановить бэкап db_backup.sql, я использую gui pgadmin
+для подключения к БД.
 Подключаемся к контейнеру.
-databases > postgres > restore backupDB.sql
+databases > postgres > restore db_backup.sql
 
 ### Запускаем сервер 
 ```
