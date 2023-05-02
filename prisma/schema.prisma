@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Dish {
+  id           Int        @id @default(autoincrement())
+  title        String     @unique
+  weight_gramm Int
+  price_rub    Int
+  description  String?
+  categories   Category[]
+  imageSrc     String?
+}
+
+model Category {
+  id     Int    @id @default(autoincrement())
+  title  String @unique
+  dishes Dish[]
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  login    String @unique
+  password String
+}
